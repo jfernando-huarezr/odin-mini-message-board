@@ -1,2 +1,3 @@
-# odin-mini-message-board
-Odin project: mini message board
+# Odin project: Mini Message Board
+
+Testing Express
