@@ -13,9 +13,9 @@
       <% messages.forEach(message => { %>
       <li>
         <h3>Title: <%= message.title %></h3>
-        <p>User: <%= message.user %></p>
+        <p>From: <%= message.user %></p>
         <p>Message: <%= message.content %></p>
-        <p>Created at: <%= message.createdAt %></p>
+        <p>Date: <%= message.createdAt %></p>
       </li>
       <% }) %>
     </ul>
