@@ -1,12 +1,15 @@
-const Message = require("../models/message");
+const { MessageDAO } = require("../dao/messageDAO");
 
-const message_index = async (req, res) => {
+const insertMessage = async (req, res) => {
+  const objMessageDAO = new MessageDAO();
+  const { title, user, content } = req.body;
+
   try {
-    const messages = await Message.find().sort({ updatedAt: -1 }).exec();
-    res.render("index", { messages, title: "Message Board" });
+    await objMessageDAO.insertMessage(title, user, content);
+    res.redirect("/");
   } catch (err) {
     console.log(err);
   }
 };
 
-module.exports = message_index;
+module.exports = { insertMessage };

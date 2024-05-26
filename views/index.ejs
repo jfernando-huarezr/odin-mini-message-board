@@ -4,7 +4,7 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <form action="/new" method="POST">
+    <form action="/newMessage" method="POST">
       <button type="submit">Add a new Message!</button>
     </form>
     <h2>All messages</h2>
@@ -12,10 +12,10 @@
     <ul>
       <% messages.forEach(message => { %>
       <li>
-        <h3><%= message.title %></h3>
-        <p><%= message.user %></p>
-        <p><%= message.content %></p>
-        <p><%= message.updatedAt %></p>
+        <h3>Title: <%= message.title %></h3>
+        <p>User: <%= message.user %></p>
+        <p>Message: <%= message.content %></p>
+        <p>Created at: <%= message.createdAt %></p>
       </li>
       <% }) %>
     </ul>
